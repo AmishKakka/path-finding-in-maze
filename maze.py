@@ -96,7 +96,8 @@ class Maze():
                       ((j + 1) * cell_size - cell_border, (i + 1) * cell_size - cell_border)]),
                     fill=fill
                 )
-
-        print(solution)
+        
+        # This will print all the solution states for the maze.
+        #print(solution)
         img.save(filename)
         return solution

@@ -4,7 +4,7 @@ Solving a maze using an informed search algorithm.
 Here, A* star Search is used to find an optimal path from A to B.
 I have used Tkinter as an external module to demonstrate the working in a window.
 
-Step 1: First run the window.py file, a window will pop up with a yellow colored upload button. Upload a .txt file containing the design of the maze.
+Step 1: First run the __init__.py file, a window will pop up with a yellow colored upload button. Upload a .txt file containing the design of the maze.
 
 
 Step 2: A colored image of the maze will appear in the same window. Below it will be a 'Show solution' button.

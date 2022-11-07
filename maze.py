@@ -36,6 +36,7 @@ class Maze():
             self.walls.append(row)
 
         self.solution = None
+        self.explored = None
 
     def neighbors(self, state):
         row, col = state
@@ -52,7 +53,7 @@ class Maze():
                 result.append((action, (r, c)))
         return result
 
-    def output_image(self, filename, show_solution=True):
+    def output_image(self, filename, show_solution=True, show_explored=False):
         from PIL import Image, ImageDraw
         from numpy import asarray
         cell_size = 50
@@ -84,20 +85,23 @@ class Maze():
 
                 # Solution
                 elif solution is not None and show_solution and (i, j) in solution:
-                    fill = (22, 235, 113)
+                    fill = (22, 255, 100)
                 
+                # Explored
+                elif self.explored is not None and show_explored and (i, j) in self.explored:
+                    fill = (212, 97, 85)
+
                 # Empty cell
                 else:
-                    fill = (237, 240, 252)
-
+                    fill = (255, 255, 255)
+                
                 # Draw cell
                 draw.rectangle(
                     ([(j * cell_size + cell_border, i * cell_size + cell_border),
                       ((j + 1) * cell_size - cell_border, (i + 1) * cell_size - cell_border)]),
                     fill=fill
                 )
-        
-        # This will print all the solution states for the maze.
+
         #print(solution)
         img.save(filename)
         return solution

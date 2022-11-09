@@ -31,8 +31,8 @@ class MainWindow():
             if self.file is not None:
                 # Calling the maze module which has the Maze class.
                 self.m = maze.Maze(self.file)
-                self.m.output_image("Path Finding in Maze/maze.png")
-                self.image = Image.open("Path Finding in Maze/maze.png")
+                self.m.output_image("../maze.png")
+                self.image = Image.open("../maze.png")
                 
                 # Resizing the image if it is beyond the screen limits.
                 if self.image.size[0] >= self.base.winfo_screenwidth()-100:
@@ -66,7 +66,7 @@ class MainWindow():
         self.aStar.solve()
         self.numStates, self.statesExplored = self.aStar.num_explored-1, self.aStar.sol
         
-        img_sol = Image.open("Path Finding in Maze/mazeSolution.png")
+        img_sol = Image.open("../mazeSolution.png")
         self.sol_img = ImageTk.PhotoImage(image=img_sol)
         self.canvas.create_image(self.image.size[0]//2, self.image.size[1]//2, image=self.sol_img)
         self.showSol.destroy()

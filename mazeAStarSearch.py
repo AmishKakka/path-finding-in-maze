@@ -88,7 +88,7 @@ class AStar():
 
                 #print("\nStates explored: ", self.num_explored)
                 #print("Found Solution.")
-                self.sol = self.m.output_image(filename='Path Finding in Maze\mazeSolution.png', 
+                self.sol = self.m.output_image(filename='..\mazeSolution.png', 
                                                 show_solution=True,
                                                 show_explored=True)
                 #print("\nCreated Solution image.")
